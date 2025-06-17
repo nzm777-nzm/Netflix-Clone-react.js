@@ -119,9 +119,8 @@ function Play() {
           {/* Movie details Section  */}
           <section
             style={{
-              backgroundImage: `linear-gradient(90deg, #000000f0 0%, #000000e6 35%, #000000c3 100%), url(${
-                imageUrl + movieDetails.backdrop_path
-              })`,
+              backgroundImage: `linear-gradient(90deg, #000000f0 0%, #000000e6 35%, #000000c3 100%), url(${imageUrl + movieDetails.backdrop_path
+                })`,
             }}
             className="bg-cover bg-center object-contain flex flex-col p-5 sm:p-14 lg:flex-row lg:items-center lg:justify-center lg:gap-8 2xl:py-24"
           >
@@ -348,18 +347,15 @@ function Play() {
               </div>
               <img
                 src={
-                  movieDetails.poster_path &&
-                  `${
-                    imageUrl +
-                    (window.innerWidth > 1024
+                  movieDetails?.poster_path
+                    ? `${imageUrl}${window.innerWidth > 1024 && movieDetails.backdrop_path
                       ? movieDetails.backdrop_path
-                        ? movieDetails.backdrop_path
-                        : "https://i.ytimg.com/vi/Mwf--eGs05U/maxresdefault.jpg"
-                      : movieDetails.poster_path)
-                  }`
+                      : movieDetails.poster_path
+                    }`
+                    : "https://i.ytimg.com/vi/MwF--c6Q59U/maxresdefault.jpg"
                 }
                 className="w-40 rounded-sm lg:w-[45rem] ml-4 lg:ml-0"
-                alt=<img src="https://i.ytimg.com/vi/Mwf--eGs05U/maxresdefault.jpg" />
+                alt="thumbnail"
               />
             </div>
           </section>
